@@ -3,7 +3,7 @@
 A console-based Library Management System built using C++ to simulate real-world book tracking, borrower management, and fine calculation based on late returns. Developed as part of my DSA practice .
 
 
-## 🚀 Features
+##  Features
 
 - 📕 Add new books to the library
 - 🔍 Search books by Title, Author, or ISBN
@@ -14,7 +14,7 @@ A console-based Library Management System built using C++ to simulate real-world
 - 🕓 Uses real-time system date for issue/return logic
 
 
-## 🧠 What I Learned
+##  What I Learned
 
 - STL usage for vectors and efficient data handling
 - Time manipulation using `<ctime>` for due dates and delay tracking
