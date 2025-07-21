@@ -1,18 +1,18 @@
 #include<bits/stdc++.h>
 using namespace std;
-
+//Book structure
 struct Book{
     string title;
     string author;
     string ISBN;
     bool is_issued=false;
 };
-
+//Details of borrowed books
 struct BorrowedBook{
     string isbn;
     string due_date;
 };
-
+//Borrower structure 
 struct Borrower{
     string ID;
     string name;
@@ -37,7 +37,7 @@ string get_time_14_days_later(){
 
     return oss.str();
 }
-
+//Calculating the time at which borrower returned book
 int calculate_days_late(const string& dueDate, const string& currentDate){
     tm due{}, now{};
 
@@ -56,7 +56,7 @@ int calculate_days_late(const string& dueDate, const string& currentDate){
 
 vector<Book>library;
 vector<Borrower>borrowers;
-
+//Function to add book
 void add_book(){
     Book book;
 
@@ -74,6 +74,7 @@ void add_book(){
     library.push_back(book);
     cout<<"\nBook added successfully\n";
 }
+//Function to view book 
 void view_book(){
     if(library.empty()){
         cout<<"\nNo book found\n";
@@ -88,7 +89,7 @@ void view_book(){
         cout<<"Status: ["<<(library[i].is_issued ? "ISSUED":"AVAILABLE")<<"]\n";
     }
 }
-
+//function to search_by_title
 void search_by_title(const vector<Book>&library ){
     string title;
     cout<<"Enter the title of book you want to search:  ";
@@ -108,7 +109,7 @@ void search_by_title(const vector<Book>&library ){
         cout<<"\nBook with title: "<<title<<" not found.\n";
     }
 }
-
+//function to search_by_author
 void search_by_author(const vector<Book>&library ){
     string author;
     cout<<"Enter the name of the author of book you want to search:  ";
@@ -128,7 +129,7 @@ void search_by_author(const vector<Book>&library ){
         cout<<"\nBook with author: "<<author<<" not found.\n";
     }
 }
-
+//function to search_by_ISBN
 void search_by_ISBN(const vector<Book>&library ){
     string ISBN;
     cout<<"Enter the ISBN of book you want to search:  ";
@@ -148,7 +149,7 @@ void search_by_ISBN(const vector<Book>&library ){
         cout<<"\nBook with ISBN: "<<ISBN<<" not found.\n";
     }
 }
-
+//function to issue a book to borrower
 void issue_book(vector<Book>&library, vector<Borrower>&borrowers){
     string isbn;
     string due_date;
@@ -197,7 +198,7 @@ void issue_book(vector<Book>&library, vector<Borrower>&borrowers){
         cout<<"\nBook with ISBN: "<<isbn<< " not found.\n";
     }
 }
-
+//Function to return book to library
 void return_book(vector<Book>&library, vector<Borrower>&borrowers){
     string isbn;
     string borrower_id;
@@ -252,7 +253,7 @@ void return_book(vector<Book>&library, vector<Borrower>&borrowers){
         cout<<"Book with ISBN: "<<isbn<<" not found.\n";
     }
 }
-
+//Function to view list of borrowers
 void view_borrower(const vector<Borrower>&borrowers){
     cout<<"\n====List of Borrowers====\n";
     if(borrowers.empty()){
@@ -275,7 +276,7 @@ void view_borrower(const vector<Borrower>&borrowers){
         cout<<"------------------------------\n";
     }
 }
-
+//DISPLAY MENU
 void display_menu(){
     cout<<"\n===Library Management System Menu===\n";
     cout<<"1. Add a new book.\n";
@@ -288,7 +289,7 @@ void display_menu(){
     cout<<"8. Return a book.\n";
     cout<<"9. Exit.\n";
 }
-
+//MAIN BLOCK
 int main(){
     
     int choice;
@@ -343,3 +344,4 @@ int main(){
 
     return 0;
 }
+
