@@ -18,7 +18,7 @@ struct Borrower{
     string name;
     vector<BorrowedBook>borrowed_books;
 };
-//get current time
+//get current date
 string get_current_date(){
     time_t now=time(0);
     tm* local=localtime(&now);
@@ -26,7 +26,7 @@ string get_current_date(){
     oss<< put_time(local, "%Y-%m-%d");
     return oss.str();
 }
-//14 days time
+//date after 14 days time
 string get_time_14_days_later(){
     time_t now = time(0);
     now+=14 * 24 *60 * 60;
